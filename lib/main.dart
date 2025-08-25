@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'core/biding/app_biding.dart';
-import '/pages/home/home.dart';
+import '/pages/splash/view/splash_view.dart';
+import 'core/dependency_inject/dependency_inject.dart';
+
 void main() {
-  Get.put(ObdController());
+  DependencyInject.init();
   runApp(const MyApp());
 }
 
@@ -15,8 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return   GetMaterialApp(
-      initialBinding: ObdBinding(),
-      home: HomeView(),
+      home:SplashView(),
       debugShowCheckedModeBanner: false,
     );
   }
