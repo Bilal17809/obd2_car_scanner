@@ -39,8 +39,6 @@ class SettingController extends GetxController {
     if (await Permission.location.isDenied) {
       await Permission.location.request();
     }
-
-    // You can check permission status and handle accordingly
     if (!(await Permission.bluetoothConnect.isGranted)) {
       Get.snackbar("Permission Required", "Bluetooth Connect permission is needed to get paired devices",
           snackPosition: SnackPosition.BOTTOM);
@@ -74,7 +72,6 @@ class SettingController extends GetxController {
     isConnected.value = false;
     print("Disconnected");
   }
-// connectToDevice and disconnect methods unchanged
 }
 
 // class ObdController extends GetxController {

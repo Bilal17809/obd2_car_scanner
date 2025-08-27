@@ -83,9 +83,6 @@ class SettingView extends StatelessWidget {
   }
 }
 
-
-
-
 // class HomeView extends StatelessWidget {
 //   final controller = Get.find<ObdController>();
 //

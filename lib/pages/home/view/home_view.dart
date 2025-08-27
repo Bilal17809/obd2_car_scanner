@@ -1,14 +1,14 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/pages/bluetooth_connection/view/bluetooth_view.dart';
 import '../../main_appbar/main_appbar.dart';
 import '/pages/home/widgets/widgets.dart';
 import '/core/theme/theme.dart';
 
 
 class HomeView extends StatelessWidget {
-
   const HomeView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +42,15 @@ class HomeView extends StatelessWidget {
                   crossAxisSpacing: 16,
                   childAspectRatio: 1,
                 ),
+              ),
+              // const SliverToBoxAdapter(child: SizedBox(height: 20)),
+              SliverToBoxAdapter(child: Spacer()),
+
+              SliverToBoxAdapter(
+                child:ConnectionButton(onTap: () {
+                  // Get.to(BluetoothView());
+                  Get.to(() => BluetoothView());
+                },)
               ),
             ],
           ),
