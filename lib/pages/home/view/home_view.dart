@@ -6,7 +6,6 @@ import '../../main_appbar/main_appbar.dart';
 import '/pages/home/widgets/widgets.dart';
 import '/core/theme/theme.dart';
 
-
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
   @override
@@ -43,15 +42,23 @@ class HomeView extends StatelessWidget {
                   childAspectRatio: 1,
                 ),
               ),
-              // const SliverToBoxAdapter(child: SizedBox(height: 20)),
-              SliverToBoxAdapter(child: Spacer()),
-
+              const SliverToBoxAdapter(child: SizedBox(height: 20)),
               SliverToBoxAdapter(
-                child:ConnectionButton(onTap: () {
-                  // Get.to(BluetoothView());
-                  Get.to(() => BluetoothView());
-                },)
+                child: Obd2Data(),
               ),
+
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    ConnectionButton(
+                      onTap: () => Get.to(() => BluetoothView()),
+                    ),
+                  ],
+                ),
+              ),
+
             ],
           ),
         ),
