@@ -24,6 +24,15 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+
+	<!-- 🔑 Required permissions for Bluetooth OBD-II -->
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This app needs Bluetooth to connect to your OBD-II adapter.</string>
+
+	<!-- 🔑 Required for BLE scanning -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location is required to detect nearby Bluetooth OBD-II devices.</string>
+
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
